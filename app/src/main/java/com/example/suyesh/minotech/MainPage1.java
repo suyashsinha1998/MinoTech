@@ -42,6 +42,11 @@ public class MainPage1 extends AppCompatActivity {
                             startActivity(i);
                             break;
 
+                    case 4:
+                            i= new Intent(MainPage1.this,DownloadsPage.class);
+                            startActivity(i);
+                            break;
+
                     case 5: i=new Intent(MainPage1.this,AboutusPage.class);
                             startActivity(i);
                             break;
