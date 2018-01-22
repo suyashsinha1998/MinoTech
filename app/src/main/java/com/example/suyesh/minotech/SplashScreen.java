@@ -25,7 +25,7 @@ public class SplashScreen extends AppCompatActivity {
         tvText.startAnimation(myAnim);
         ivLogo.startAnimation(myAnim);
         tvSlogan.startAnimation(myAnim);
-        final Intent i = new Intent(this,MainPage.class);
+        final Intent i = new Intent(this,MainPage1.class);
         Thread timer = new Thread(){
             public void run(){
                 try {

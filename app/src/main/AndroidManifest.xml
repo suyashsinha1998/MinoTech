@@ -2,8 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.suyesh.minotech">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
+        android:largeHeap="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -16,7 +20,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainPage"></activity>
+        <activity
+            android:name=".TestPage"
+            android:parentActivityName=".MainPage1" />
+        <activity
+            android:name=".PracticePage"
+            android:parentActivityName=".MainPage1" />
+        <activity
+            android:name=".NewsPage"
+            android:parentActivityName=".MainPage1" />
+        <activity
+            android:name=".VideosPage"
+            android:parentActivityName=".MainPage1" />
+        <activity
+            android:name=".DownloadsPage"
+            android:parentActivityName=".MainPage1" />
+        <activity
+            android:name=".AboutusPage"
+            android:parentActivityName=".MainPage1" />
+        <activity android:name=".MainPage1" />
+        <activity android:name=".NewsWeb" />
+        <activity android:name=".VideosListPage"></activity>
     </application>
 
 </manifest>

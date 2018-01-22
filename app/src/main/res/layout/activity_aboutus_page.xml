@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    tools:context="com.example.suyesh.minotech.AboutusPage">
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:textSize="28sp"
+        android:textColor="#ff0066"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:text="About Us" />
+
+    <TextView
+        android:id="@+id/tvSubTitle1"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvTitle"
+        android:layout_marginTop="16dp"
+        android:text="About The App : MINOTECH" />
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvSubTitle1"
+        android:layout_marginTop="16dp"
+        android:text="This app is designed to ease the necessity of quality education in a mining engineer's life. This app prepares the student for gate examinations purpose and also keeps him updated with the current happenings in mining industry around the globe. This app is a pocket guide for a future mining engineer. Thus it becomes a must have app for everyone."
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/tvSubtitle2"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="About the Developers" />
+
+    <TextView
+        android:id="@+id/tvContent1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvSubtitle2"
+        android:layout_marginTop="27dp"
+        android:text="App Idea and Suggestions : Matul Baghel , NIT Raipur" />
+
+    <TextView
+        android:id="@+id/tvContent2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvContent1"
+        android:layout_marginTop="24dp"
+        android:text="Developers : Ketan Kumar , NIT Raipur
+                       Suyash Sinha , NIT Raipur" />
+</android.widget.RelativeLayout>
