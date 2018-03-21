@@ -18,11 +18,12 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
-    private List<UserModel> userModels;
+    private ArrayList<UserModel> userModels;
     private Context context;
 
     public MyAdapter(ArrayList<UserModel> mylist, Context applicationContext) {
-
+      this.userModels = mylist;
+        this.context = applicationContext;
     }
 
 

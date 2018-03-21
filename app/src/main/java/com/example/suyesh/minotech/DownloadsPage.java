@@ -63,6 +63,8 @@ public class DownloadsPage extends AppCompatActivity {
 
             parseData process = new parseData();
             process.execute();
+
+            Log.v(process.mylist.size()+" ","downloads");
             progressDialog.dismiss();
             adapter = new MyAdapter(process.mylist,getApplicationContext());
             recyclerView.setAdapter(adapter);

@@ -34,6 +34,8 @@ public class parseData extends AsyncTask<Void,Void,Void> {
 
     @Override
     protected void onPostExecute(Void aVoid) {
+
+        mylist.clear();
         super.onPostExecute(aVoid);
         JSONArray jsonArray = null;
         try {
@@ -50,11 +52,13 @@ public class parseData extends AsyncTask<Void,Void,Void> {
                 JO = (JSONObject) jsonArray.get(i);
                 UserModel um= new UserModel(JO.getString("name"),JO.getString("gender"),JO.getString("job"));
                 mylist.add(um);
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
         }
+        Log.v(this.mylist.size()+" ","parsedata");
     }
 
 
@@ -63,7 +67,7 @@ public class parseData extends AsyncTask<Void,Void,Void> {
 
         try {
             data="";
-            URL urlJason = new URL("https://api.myjson.com/bins/rc3op");
+            URL urlJason = new URL("https://api.myjson.com/bins/ois5v");
             HttpURLConnection httpURLConnection = (HttpURLConnection) urlJason.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
