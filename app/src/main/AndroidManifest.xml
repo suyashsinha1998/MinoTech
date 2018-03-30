@@ -6,10 +6,10 @@
 
     <application
         android:allowBackup="true"
-        android:largeHeap="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -40,7 +40,8 @@
             android:parentActivityName=".MainPage1" />
         <activity android:name=".MainPage1" />
         <activity android:name=".NewsWeb" />
-        <activity android:name=".VideosListPage"></activity>
+        <activity android:name=".VideosListPage" />
+        <activity android:name=".VideosListPageRecyclerView"></activity>
     </application>
 
 </manifest>

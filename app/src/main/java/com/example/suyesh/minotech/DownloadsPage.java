@@ -17,6 +17,14 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.Response.ErrorListener;
+import com.android.volley.Response.Listener;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.suyesh.minotech.Models.UserModel;
 
 import org.json.JSONArray;
@@ -36,10 +44,10 @@ import java.util.List;
 
 public class DownloadsPage extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-
-    private List<UserModel> userModels;
+    protected RecyclerView recyclerView;
+    protected RecyclerView.Adapter adapter;
+    private ArrayList<UserModel> userModels;
+    final static String urljson="https://api.myjson.com/bins/ois5v";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,23 +61,73 @@ public class DownloadsPage extends AppCompatActivity {
         userModels = new ArrayList<>();
 
         loadRecyclerViewData();
+
         }
 
-        private void loadRecyclerViewData(){
+        /*protected void loadRecyclerViewData(){
 
             ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setMessage("Loading Data...");
             progressDialog.show();
 
             parseData process = new parseData();
+
             process.execute();
 
             Log.v(process.mylist.size()+" ","downloads");
-            progressDialog.dismiss();
             adapter = new MyAdapter(process.mylist,getApplicationContext());
             recyclerView.setAdapter(adapter);
+        }*/
+        protected void loadRecyclerViewData()
+        {
+            final ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage("Loading Data...");
+            progressDialog.show();
+
+            StringRequest stringRequest=new StringRequest(Request.Method.GET,
+                    urljson,
+                    new Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            progressDialog.dismiss();
+                            JSONArray jsonArray = null;
+                            try {
+                                jsonArray = new JSONArray(response);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            for (int i=0 ; i<jsonArray.length(); ++i)
+                            {
+                                JSONObject JO = null;
+                                try {
+                                    JO = (JSONObject) jsonArray.get(i);
+                                    UserModel um= new UserModel(JO.getString("name"),JO.getString("gender"),JO.getString("job"));
+                                    userModels.add(um);
+                                    adapter = new MyAdapter(userModels,getApplicationContext());
+                                    recyclerView.setAdapter(adapter);
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+
+
+                        }
+                    },
+                    new ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+
+                        }
+                    });
+
+            RequestQueue requestQueue= Volley.newRequestQueue(this);
+            requestQueue.add(stringRequest);
+
 
         }
+
 }
 
 

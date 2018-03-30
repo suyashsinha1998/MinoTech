@@ -32,6 +32,7 @@ public class parseData extends AsyncTask<Void,Void,Void> {
     static ArrayList<UserModel> mylist = new ArrayList<UserModel>();
     String data="";
 
+
     @Override
     protected void onPostExecute(Void aVoid) {
 
@@ -59,6 +60,7 @@ public class parseData extends AsyncTask<Void,Void,Void> {
 
         }
         Log.v(this.mylist.size()+" ","parsedata");
+
     }
 
 
@@ -84,6 +86,7 @@ public class parseData extends AsyncTask<Void,Void,Void> {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Log.v("note","doInbackground exeecuted");
         return null;
     }
 
