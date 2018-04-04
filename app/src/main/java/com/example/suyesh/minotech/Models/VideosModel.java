@@ -5,12 +5,12 @@ package com.example.suyesh.minotech.Models;
  */
 
 public class VideosModel {
-    private String info;
-    private int image;
+    private String info,image,video_id;
 
-    public VideosModel(String info, int image) {
+    public VideosModel(String info, String image , String video_id) {
         this.info = info;
         this.image = image;
+        this.video_id = video_id;
     }
 
     public String getInfo() {
@@ -21,11 +21,19 @@ public class VideosModel {
         this.info = info;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getVideo_id() {
+        return video_id;
+    }
+
+    public void setVideo_id(String video_id) {
+        this.video_id = video_id;
     }
 }

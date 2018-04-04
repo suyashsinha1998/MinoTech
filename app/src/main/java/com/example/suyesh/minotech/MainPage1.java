@@ -38,7 +38,7 @@ public class MainPage1 extends AppCompatActivity {
                             break;
 
                     case 3:
-                            i = new Intent(MainPage1.this , VideosListPage.class);
+                            i = new Intent(MainPage1.this , VideosListPageRecyclerView.class);
                             startActivity(i);
                             break;
 
